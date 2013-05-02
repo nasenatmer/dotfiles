@@ -1,0 +1,12 @@
+
+[default]
+# Write your default config options here!
+ao=alsa
+
+[gnome-mplayer]
+ao=alsa
+msglevel=all=5
+vo=xv
+vf=eq2
+
+af=scaletempo

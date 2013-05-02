@@ -1,0 +1,139 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 0.1.3
+#
+# If you edit this, do not forget to uncomment any lines that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h 
+# The XK_ is not needed. 
+#
+# List of modifier (on my keyboard): 
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+#
+# Another way to specifie a key is to use 'xev' and set the 
+# keycode with c:nnn or the modifier with m:nnn where nnn is 
+# the keycode or the state returned by xev 
+#
+# This file is created by xbindkey_config 
+# The structure is : 
+# # Remark 
+# "command" 
+# m:xxx + c:xxx 
+# Shift+... 
+
+
+
+
+#keystate_numlock = enable
+#keystate_scrolllock = enable
+#keystate_capslock = enable
+
+
+
+#mute
+"amixer -c 0 set Master toggle"
+    m:0x0 + c:121
+    XF86AudioMute 
+
+#PCM louder
+"amixer -c 0 set PCM Playback Volume 7+"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume 
+
+#Master louder
+"amixer -c 0 set Master Playback Volume 2+"
+    m:0x4 + c:123
+    Control + XF86AudioRaiseVolume 
+
+#PCM more quiet
+"amixer -c 0 set PCM Playback Volume 7-"
+    m:0x0 + c:122
+    XF86AudioLowerVolume 
+
+#Master more quiet
+"amixer -c 0 set Master Playback Volume 2-"
+    m:0x4 + c:122
+    Control + XF86AudioLowerVolume 
+
+#mute microphone
+"amixer -c 0 set Capture toggle"
+    m:0x0 + c:248
+    NoSymbol 
+
+#mpc toggle
+"mpc toggle"
+    m:0x0 + c:172
+    XF86AudioPlay 
+
+#mpc prev
+"mpc prev"
+    m:0x40 + c:122
+    Mod4 + XF86AudioLowerVolume 
+
+#mpc next
+"mpc next"
+    m:0x40 + c:123
+    Mod4 + XF86AudioRaiseVolume 
+
+#hibernate-2disk
+"sudo systemctl hibernate"
+    m:0x4 + c:70
+    Control + F4 
+
+#hibernate-both
+"sudo /usr/sbin/hibernate -F /etc/hibernate/tuxonice-both.conf"
+    m:0x4 + c:69
+    Control + F3 
+
+#display setup (arandr)
+"arandr"
+    m:0x2004 + c:73
+    Control + F7 
+
+#xkill
+"xkill"
+    m:0x4 + c:72
+    Control + F6 
+
+#chromium
+"chromium"
+    m:0x4 + c:180
+    Control + XF86HomePage 
+
+#dwb
+"dwb"
+    m:0x0 + c:180
+    XF86HomePage 
+
+#dmenu_run
+"dmenu_run"
+    m:0x0 + c:156
+    XF86Launch1 
+
+#set one display
+"/home/jakob/doc/linux/scripts/setd one"
+    m:0x4 + c:67
+    Control + F1 
+
+#set two displays
+"/home/jakob/doc/linux/scripts/setd two"
+    m:0x4 + c:68
+    Control + F2 
+
+#xmodmap
+"xmodmap ~/.Xmodmap"
+    m:0x4 + c:95
+    Control + F11 
+
+#thunderbird
+"thunderbird"
+    m:0x0 + c:163
+    XF86Mail 
+
+#
+# End of xbindkeys configuration
