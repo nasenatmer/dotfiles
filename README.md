@@ -1,10 +1,11 @@
-Dotfiles with bone2 focus
-=========================
+Dotfiles with bone2 adaptions
+=============================
 
-A collection of my dotfiles on Archlinux `x86_64`.
+A collection of my dotfiles used on a Archlinux `x86_64` box.
 
-A special focus is set on tools that use `vi`-like `hjkl` navigation and modes to adapt these to the 
-[bone2 keyboard layout][1].
+A special focus is set on tools that use `vi`-like `hjkl` navigation. I use some of them (`vim`, 
+`ncmpcpp`, `zathura`) and adapted these to the [bone2 keyboard layout][1]. Additionally, some other 
+programmes (`tmux`, `mplayer`) offer vi-like modes where I sought to adapt these, too.
 
  Feel free to take and use whatever you like!
 
