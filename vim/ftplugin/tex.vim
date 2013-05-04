@@ -1,19 +1,18 @@
-" have automatic mkview + loadview
-"autocmd BufWinLeave * silent! mkview 
-"autocmd BufWinEnter * silent! loadview
+let g:tex_flavor = "latex" 	" defaults *.tex to flavor=latex
 
 " a: auto-format. w: line that ends w/ white-space: paragraph continues; everything else: end of paragraph
 set formatoptions+=tcqwan
 set textwidth=106
-set wm=1
 
-" when marking text in visual mode, pressing F7 wraps it in curly braces and puts curser in front of them. 
-"shift+F7 puts it in \begin{}\end{} tags.
+" Some aliases to make writing LaTeX documents with biblatex easier 
 imap <buffer> << 		\emph{
 imap <buffer> ((		\autocite[
-"imap <buffer> [[ 		\begin{
 imap <buffer> [[ 		\textcite[
+" Those below require LaTeX-Box to be installed!
+" https://github.com/LaTeX-Box-Team/LaTeX-Box
 imap <buffer> ))		<Plug>LatexCloseCurEnv
+" when marking text in visual mode, pressing F7 wraps it in curly braces and puts cursor in front of it. 
+" shift+F7 puts it in \begin{}\end{} tags.
 vmap <buffer> <F7>		<Plug>LatexWrapSelection
 vmap <buffer> <S-F7>		<Plug>LatexEnvWrapSelection
 

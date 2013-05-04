@@ -6,25 +6,20 @@ set nobackup			" don't make backup files
 set history=50			" keep 50 lines of command line history
 set laststatus=2		" Always show the statusline (required for powerline)
 set noshowmode			" don't show current mode (done by powerline)
-set t_Co=256			" Explicitly tell vim that the terminal supports 256 colors (also required for powerline)
+set t_Co=256			" tell vim that terminal supports 256 colors (required for powerline)
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set ignorecase			" case insensitive
-set smartcase			" if search pattern contains uppercase letter, search is case sensitive. If only lowercase letters present, search is case insensitive
+set smartcase			" if search pattern has uppercase letter, case sensitive, if not c. insensitive
 set hlsearch			" highlight all search results	
-set pastetoggle=<F10>		" Set a toggle for pasting input
-colorscheme tango2		" tango2, elflord, blackbeauty, satori, marklar, sean,  caramel, oceanlight, dante, slate
+"also nice themes: tango2, elflord, blackbeauty, satori, marklar, sean,  caramel, oceanlight, dante, slate
+colorscheme tango2
 set nocursorline		" disable cursorline with schemes like tango2
-"set guifont="Courier New 12" 	" A clean-looking font for gvim
 syntax on			" Switch Syntax Highlighting on
-let g:tex_flavor = "latex" 	" defaults *.tex to flavor=latex
 let g:xml_syntax_folding = 1	" automatic syntax based folding for xml files
 let $PAGER=''			" clear $PAGER for vim
 
-"set rnu				" set relative instead of absolute linenumbers
-
-"""" keyboard mappings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-" and now for bone2 (https://wiki.neo-layout.org/bone2 )
+"""" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
 no j h
 no h j
 no l k
@@ -33,11 +28,10 @@ no k l
 """" other mappings to make life easier
 " use tabedit
 nmap t :tabedit 
-" use üü to enter normal mode 
+" alias üü to <Esc> key. Handy for people with German keyboard layouts.
 inoremap üü <Esc>
 vnoremap üü <Esc>
-" Don't use Ex mode, use Q for formatting
-map Q gq
+" alias "mm" to :write and "q" to :quit without saving
 map mm :w!
 map q :q!
 
@@ -55,19 +49,13 @@ filetype off                   " required!
  " vim-scripts repos
  Bundle 'vim-scripts/ScrollColors'
  " original repos on github
-	 let g:Powerline_stl_path_style = 'short'
-" Bundle 'Markdown'	 
  Bundle 'LaTeX-Box-Team/LaTeX-Box'
-	"LatexBox settings are to be found in ~/.vim/ftplugin/tex.vim%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- " vim-scripts repos
+	"LatexBox settings are to be found in ~/.vim/ftplugin/tex.vim
  Bundle 'transvim.vim'
 	 " enable transvim.vim translator
-	  let g:trv_dictionary="/usr/share/dict/de-en.txt"
- " filetype plugin indent on     " required! (Jakob: comes later in autocmd section anyways)
- "
+	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
  "NOTE: comments after Bundle command are not allowed..
  " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -94,13 +82,7 @@ if has("autocmd")
     \ endif
 
   au BufEnter * checktime
-  
-  " Don't screw up folds when inserting text that might affect them, until
-  " leaving insert mode. Foldmethod is local to the window.
-"  autocmd InsertEnter * let w:last_fdm=&foldmethod | setlocal foldmethod=manual
-"  autocmd InsertLeave * let &l:foldmethod=w:last_fdm
-
-    augroup END
+augroup END
 
 else
 
@@ -143,28 +125,28 @@ function! ToggleSpell()
   echo "spell checking language:" g:myLangList[b:myLang]
 endfunction
 
-	" New Omni-Completion mapped to F1-F12
-	" <F1>   <c-x><c-L> completion: whole line
+" Different completions mapped to some FN keys 
+" <F1> <c-x><c-L> completion: whole line
 	ino <silent> <F1> <c-x><c-l>
-	" <F2>   <c-x><c-T> completion: keywords using thesaurus
+" <F2> <c-x><c-T> completion: keywords using thesaurus
 	ino <silent> <F2> <c-x><c-t>
-"	set thesaurus+=/home/jakob/.local/share/openthesaurus.txt
-"	set thesaurus+=/usr/share/mythes/th_en_GB_v2.dat
 	set thesaurus+=/home/jakob/.vim/thesaurus/roget13a.txt
 "	set thesaurus+=/home/jakob/.vim/thesaurus/mthesaur.txt
-	" <F3>   <c-x><c-I> completion: keywords in current and included files
+" <F3> <c-x><c-I> completion: keywords in current and included files
 	ino <silent> <F3> <c-x><c-i>
-	" <F4>   <c-x><c-O> completion: omni completion
+" <F4> <c-x><c-O> completion: omni completion
 	ino <silent> <F4> <c-x><c-o>
-	" <F5>   toggle relative/absolute linenumbers
+" <F5> toggle relative/absolute linenumbers
 	nnoremap <f5> :call g:ToggleNuMode()<cr>
-	" <F6> saves file  in insert mode
+" <F6> saves file  in insert mode
 	imap <F6> :wa
-	" <F7>	 toggle spell de/en/none
+" <F7> toggle spell de/en/none
 	nmap <silent> <F7> :call ToggleSpell()<CR>
-	" toggle formatoptions=a value
+" <F8> toggle formatoptions=a value
 	no <F8> :call ToggleFO()<CR>
 	ino <F8> :call ToggleFO()<CR>
-ino <silent> <F12>  :echo '[F1:line F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F7:toggle spell F8:fo-toggle F10:pastetoggle]' <CR>
-no <silent> <F12>  :echo '[F1:line F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F7:toggle spell F8:fo-toggle F10:pastetoggle]' <CR>
-
+" <F10> toggle Paste mode
+	set pastetoggle=<F10>
+" <F12> echo all FN key functions
+	ino <silent> <F12>  :echo '[F1:line F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F7:toggle spell F8:fo-toggle F10:pastetoggle]' <CR>
+	no <silent> <F12>  :echo '[F1:line F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F7:toggle spell F8:fo-toggle F10:pastetoggle]' <CR>
