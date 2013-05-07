@@ -10,3 +10,5 @@
 	autocrlf = input
 [log]
 	merge = true
+[merge]
+	tool = vimdiff
