@@ -10,3 +10,6 @@
 [submodule "vim/bundle/transvim.vim"]
 	path = vim/bundle/transvim.vim
 	url = https://github.com/vim-scripts/transvim.vim.git
+[submodule "vim-pandoc"]
+	path = vim-pandoc
+	url = /home/jakob/.vim/bundle/vim-pandoc

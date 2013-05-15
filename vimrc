@@ -18,6 +18,7 @@ set nocursorline		" disable cursorline with schemes like tango2
 syntax on			" Switch Syntax Highlighting on
 let g:xml_syntax_folding = 1	" automatic syntax based folding for xml files
 let $PAGER=''			" clear $PAGER for vim
+setlocal textwidth=78		" have a default textwidth
 
 """" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
 no j h
@@ -54,6 +55,7 @@ filetype off                   " required!
  Bundle 'transvim.vim'
 	 " enable transvim.vim translator
 	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
+ Bundle 'vim-pandoc/vim-pandoc'
  "NOTE: comments after Bundle command are not allowed..
  " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -69,9 +71,6 @@ if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
