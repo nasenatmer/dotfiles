@@ -12,4 +12,4 @@
 	url = https://github.com/vim-scripts/transvim.vim.git
 [submodule "vim-pandoc"]
 	path = vim-pandoc
-	url = /home/jakob/.vim/bundle/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pando.git 
