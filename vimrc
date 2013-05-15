@@ -55,7 +55,6 @@ filetype off                   " required!
  Bundle 'transvim.vim'
 	 " enable transvim.vim translator
 	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
- Bundle 'vim-pandoc/vim-pandoc'
  "NOTE: comments after Bundle command are not allowed..
  " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
