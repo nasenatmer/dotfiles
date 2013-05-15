@@ -11,4 +11,10 @@
 [log]
 	merge = true
 [merge]
-	tool = vimdiff
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
+[pull]
+	rebase = true
