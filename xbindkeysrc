@@ -70,40 +70,30 @@
     m:0x0 + c:172
     XF86AudioPlay 
 
+#mpc stop
+"mpc stop"
+    m:0x0 + c:174
+    XF86AudioStop 
+
 #mpc prev
 "mpc prev"
-    m:0x40 + c:122
-    Mod4 + XF86AudioLowerVolume 
+    m:0x0 + c:173
+    XF86AudioPrev 
 
 #mpc next
 "mpc next"
-    m:0x40 + c:123
-    Mod4 + XF86AudioRaiseVolume 
-
-#hibernate-2disk
-"sudo systemctl hibernate"
-    m:0x4 + c:70
-    Control + F4 
-
-#hibernate-both
-"sudo /usr/sbin/hibernate -F /etc/hibernate/tuxonice-both.conf"
-    m:0x4 + c:69
-    Control + F3 
+    m:0x0 + c:171
+    XF86AudioNext 
 
 #display setup (arandr)
 "arandr"
-    m:0x2004 + c:73
-    Control + F7 
+    m:0x0 + c:235
+    XF86Display 
 
 #xkill
 "xkill"
     m:0x4 + c:72
     Control + F6 
-
-#chromium
-"chromium"
-    m:0x4 + c:180
-    Control + XF86HomePage 
 
 #dwb
 "dwb"
@@ -134,6 +124,11 @@
 "thunderbird"
     m:0x0 + c:163
     XF86Mail 
+
+#Lock Screen
+"xtrlock"
+    m:0x0 + c:160
+    XF86ScreenSaver 
 
 #
 # End of xbindkeys configuration
