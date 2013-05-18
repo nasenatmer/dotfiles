@@ -8,6 +8,7 @@
 [core]
 	safecrlf = true
 	autocrlf = input
+	pager = vimpager
 [log]
 	merge = true
 [merge]
@@ -18,3 +19,5 @@
 	keepBackup = false
 [pull]
 	rebase = true
+[color]
+	ui = auto
