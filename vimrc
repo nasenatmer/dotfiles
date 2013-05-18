@@ -17,7 +17,7 @@ colorscheme tango2
 set nocursorline		" disable cursorline with schemes like tango2
 syntax on			" Switch Syntax Highlighting on
 let g:xml_syntax_folding = 1	" automatic syntax based folding for xml files
-let $PAGER=''			" clear $PAGER for vim
+"let $PAGER=''			" clear $PAGER for vim
 setlocal textwidth=78		" have a default textwidth
 
 """" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
