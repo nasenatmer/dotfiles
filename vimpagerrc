@@ -1,0 +1,11 @@
+syntax on			" Switch Syntax Highlighting on
+source ~/.vim/bundle/vundle/plugin/AnsiEscPlugin.vim
+colorscheme tango2
+set laststatus=2		" Always show the statusline (required for powerline)
+filetype plugin indent on
+
+"""" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
+no j h
+no h j
+no l k
+no k l
