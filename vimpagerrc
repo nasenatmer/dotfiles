@@ -1,5 +1,5 @@
 syntax on			" Switch Syntax Highlighting on
-source ~/.vim/bundle/vundle/plugin/AnsiEscPlugin.vim
+source ~/.vim/plugin/AnsiEscPlugin.vim
 colorscheme tango2
 set laststatus=2		" Always show the statusline (required for powerline)
 filetype plugin indent on
