@@ -9,6 +9,7 @@
 	safecrlf = true
 	autocrlf = input
 	pager = vimpager
+	editor = vim
 [log]
 	merge = true
 [merge]
