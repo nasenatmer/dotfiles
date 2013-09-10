@@ -52,6 +52,12 @@ filetype off                   " required!
  " original repos on github
  Bundle 'LaTeX-Box-Team/LaTeX-Box'
 	"LatexBox settings are to be found in ~/.vim/ftplugin/tex.vim
+	let g:LatexBox_Folding = 1
+"	let g:LatexBox_quickfix = 2
+"	let g:LatexBox_latexmk_async = 1
+"	let g:LatexBox_latexmk_preview_continuously = 1
+	let g:LatexBox_latexmk_options = '-xelatex'
+"	let g:LatexBox_show_warnings = 0
  Bundle 'transvim.vim'
 	 " enable transvim.vim translator
 	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
