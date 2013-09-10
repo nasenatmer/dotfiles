@@ -170,7 +170,7 @@ key_lyrics = 'L'
 #
 #key_toggle_separators_in_playlist = '!'
 #
-#key_toggle_lyrics_db = 'L'
+key_toggle_lyrics_db = ''
 #
 #key_toggle_fetching_lyrics_for_current_song_in_background = 'F'
 #
