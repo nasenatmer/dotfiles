@@ -35,6 +35,10 @@ vnoremap üü <Esc>
 " alias "mm" to :write and "q" to :quit without saving
 map mm :w!
 map q :q!
+" start a new change before doing <c-u> (and be able to undo it with u)
+" (wikia/recover from accidental Ctrl-U)
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
 
  " Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 filetype off                   " required!
