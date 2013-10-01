@@ -8,6 +8,7 @@ set textwidth=106
 imap <buffer> << 		\emph{
 imap <buffer> ((		\autocite[
 imap <buffer> [[ 		\textcite[
+imap <buffer> {{		\textsc{
 " Those below require LaTeX-Box to be installed!
 " https://github.com/LaTeX-Box-Team/LaTeX-Box
 imap <buffer> ))		<Plug>LatexCloseCurEnv
