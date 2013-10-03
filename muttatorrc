@@ -1,0 +1,15 @@
+"1.0 (created: 2011/10/06 14:10:39)
+
+nnoremap h j
+nnoremap j h
+nnoremap k l
+nnoremap l k
+set hintchars=ctieobnrsgq
+set runtimepath=/home/jakob/.muttator
+vnoremap h j
+vnoremap j h
+vnoremap k l
+vnoremap l k
+source! /home/jakob/.muttatorrc.local
+
+" vim: set ft=muttator:
