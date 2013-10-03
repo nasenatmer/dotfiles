@@ -1,0 +1,17 @@
+"3.7.1 (created: 2013/05/22 20:32:57)
+nnoremap h j
+nnoremap j h
+nnoremap k l
+nnoremap l k
+nnoremap go O
+nnoremap O :tabopen 
+set hintchars=ctieobnrsgq
+vnoremap h j
+vnoremap j h
+vnoremap k l
+vnoremap l k
+highlight Hint::after -append font-size: 9pt;
+
+source! /home/jakob/.vimperatorrc.local
+
+" vim: set ft=vimperator:
