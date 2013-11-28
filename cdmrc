@@ -10,7 +10,7 @@
 # (An example:)
  binlist=(
    '/usr/bin/openbox-session'      # Launch your X session,
-   '/bin/zsh --login'              # or just execute your shell,
+   '/usr/bin/zsh --login'              # or just execute your shell,
 )
 
 # List all program display names, one-by-one matched with $binlist.
