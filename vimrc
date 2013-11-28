@@ -60,6 +60,8 @@ filetype off                   " required!
 	let g:LatexBox_latexmk_async = 1
 	let g:LatexBox_latexmk_preview_continuously = 1
 	let g:LatexBox_latexmk_options = '-xelatex'
+	let g:LatexBox_quickfix = '2' 
+ Bundle 'lervag/vim-latex'
  Bundle 'transvim.vim'
 	 " enable transvim.vim translator
 	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
