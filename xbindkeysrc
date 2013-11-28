@@ -131,7 +131,7 @@
     XF86Mail 
 
 #Lock Screen
-"xtrlock"
+"slock"
     m:0x0 + c:160
     XF86ScreenSaver 
 
