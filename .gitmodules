@@ -1,9 +1,6 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
-[submodule "vim/bundle/LaTeX-Box"]
-	path = vim/bundle/LaTeX-Box
-	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
 [submodule "vim/bundle/ScrollColors"]
 	path = vim/bundle/ScrollColors
 	url = https://github.com/vim-scripts/ScrollColors.git
