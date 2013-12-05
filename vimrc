@@ -12,7 +12,7 @@ set showcmd			" display incomplete commands
 set ignorecase			" case insensitive
 set smartcase			" if search pattern has uppercase letter, case sensitive, if not c. insensitive
 set hlsearch			" highlight all search results	
-colorscheme tango2
+colorscheme railscasts
 "also nice themes: tango2, elflord, blackbeauty, satori, marklar, sean,  caramel, oceanlight, dante, slate
 set nocursorline		" disable cursorline with schemes like tango2
 syntax on			" Switch Syntax Highlighting on
