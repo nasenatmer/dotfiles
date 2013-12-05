@@ -41,7 +41,7 @@ inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
  " Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-filetype off                   " required!
+ filetype off                   " required!
 
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
@@ -53,11 +53,10 @@ filetype off                   " required!
  " My Bundles here:
  " vim-scripts repos
  Bundle 'vim-scripts/ScrollColors'
- " conflicting with mappings [[ ]], ((, )): latex#motion#next_sec
-" original repos on github
+ 
+ " original repos on github
  Bundle 'lervag/vim-latex'
  Bundle 'transvim.vim'
-	 " enable transvim.vim translator
 	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
  "NOTE: comments after Bundle command are not allowed..
  " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
