@@ -138,9 +138,9 @@ endfunction
 " <F4> <c-x><c-O> completion: omni completion
 	ino <silent> <F4> <c-x><c-o>
 " <F5> toggle relative/absolute linenumbers
-	nnoremap <f5> :call g:ToggleNuMode()<cr>
+	nnoremap <f5> :call g:ToggleNuMode()<CR>
 " <F6> saves file  in insert mode
-	imap <F6> :wa
+	imap <F6> :w<CR>a
 " <F7> toggle spell de/en/none
 	nmap <silent> <F7> :call ToggleSpell()<CR>
 " <F8> toggle formatoptions=a value
