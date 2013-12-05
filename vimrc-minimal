@@ -1,0 +1,32 @@
+set nocompatible		" must be first, because it changes other options as a side effect.
+set encoding=utf-8		" set encoding to utf-8
+colorscheme railscasts
+syntax on			" Switch Syntax Highlighting on
+setlocal textwidth=78		" have a default textwidth
+
+"""" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
+no j h
+no h j
+no l k
+no k l
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
