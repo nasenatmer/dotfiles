@@ -12,7 +12,7 @@ set showcmd			" display incomplete commands
 set ignorecase			" case insensitive
 set smartcase			" if search pattern has uppercase letter, case sensitive, if not c. insensitive
 set hlsearch			" highlight all search results	
-colorscheme railscasts
+colorscheme tango2
 "also nice themes: tango2, elflord, blackbeauty, satori, marklar, sean,  caramel, oceanlight, dante, slate
 set nocursorline		" disable cursorline with schemes like tango2
 syntax on			" Switch Syntax Highlighting on
@@ -53,14 +53,8 @@ filetype off                   " required!
  " My Bundles here:
  " vim-scripts repos
  Bundle 'vim-scripts/ScrollColors'
- " original repos on github
- Bundle 'LaTeX-Box-Team/LaTeX-Box'
-	"LatexBox settings are to be found in ~/.vim/ftplugin/tex.vim
-	let g:LatexBox_Folding = 1
-	let g:LatexBox_latexmk_async = 1
-	let g:LatexBox_latexmk_preview_continuously = 1
-	let g:LatexBox_latexmk_options = '-xelatex'
-	let g:LatexBox_quickfix = '2' 
+ " conflicting with mappings [[ ]], ((, )): latex#motion#next_sec
+" original repos on github
  Bundle 'lervag/vim-latex'
  Bundle 'transvim.vim'
 	 " enable transvim.vim translator

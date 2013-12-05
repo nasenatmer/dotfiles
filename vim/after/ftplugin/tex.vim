@@ -4,20 +4,18 @@ let g:tex_flavor = "latex" 	" defaults *.tex to flavor=latex
 set formatoptions+=tcqwan
 set textwidth=106
 
-" LatexBox settings
-"	let g:LatexBox_Folding = 1
-"	let g:LatexBox_latexmk_async = 1
-"	let g:LatexBox_latexmk_preview_continuously = 1
-"	let g:LatexBox_latexmk_options = '-xelatex'
+" Settings for vim-latex
+  let g:latex_complete_close_braces = 1
+  let g:latex_latexmk_quickfix = 1
+  let g:latex_latexmk_options = '-xelatex'
 
 " Some aliases to make writing LaTeX documents with biblatex easier 
 imap <buffer> << 		\emph{
 imap <buffer> ((		\autocite[
-"imap <buffer> [[ 		\textcite[
 imap <buffer> {{		\textcite[
-" Those below require LaTeX-Box to be installed!
-" https://github.com/LaTeX-Box-Team/LaTeX-Box
-imap <buffer> ))		<Plug>LatexCloseCurEnv
+
+" Those below require LaTeX-Box or vim-latex to be installed!
+" imap <buffer> ))		<Plug>LatexCloseCurEnv
 " when marking text in visual mode, pressing F7 wraps it in curly braces and puts cursor in front of it. 
 " shift+F7 puts it in \begin{}\end{} tags.
 vmap <buffer> <F7>		<Plug>LatexWrapSelection
