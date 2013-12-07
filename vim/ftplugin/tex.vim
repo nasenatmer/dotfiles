@@ -7,7 +7,7 @@ set textwidth=106
 " Settings for vim-latex
   let g:latex_complete_close_braces = 1
   let g:latex_latexmk_quickfix = 1
-  let g:latex_latexmk_options = '-xelatex'
+  let g:latex_latexmk_options = '-auxdir=aux -xelatex'
 
 " Some aliases to make writing LaTeX documents with biblatex easier 
 imap <buffer> << 		\emph{
