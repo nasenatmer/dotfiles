@@ -37,6 +37,10 @@ This is mainly for me to simplify setting up a familiar working environment:
 		for rcfile in "${HOME}"/.dotfiles/^README.md(.N); do
 		  ln -s "$rcfile" "${HOME}/.${rcfile:t}"
 		done
+		cd ~
+		ln -s ~/.dotfiles/vim .vim
+		ln -s ~/.dotfiles/mplayer .mplayer
+		ln -s ~/.dotfiles/ncmpcpp
 
 
 Updating
