@@ -40,7 +40,7 @@ This is mainly for me to simplify setting up a familiar working environment:
 		cd ~
 		ln -s ~/.dotfiles/vim .vim
 		ln -s ~/.dotfiles/mplayer .mplayer
-		ln -s ~/.dotfiles/ncmpcpp
+		ln -s ~/.dotfiles/ncmpcpp .ncmpcpp
 
 
 Updating
