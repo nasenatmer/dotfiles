@@ -42,23 +42,15 @@ inoremap <c-w> <c-g>u<c-w>
 
  " Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
  filetype off                   " required!
-
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
-
  " let Vundle manage Vundle
- " required! 
  Bundle 'gmarik/vundle'
-
- " My Bundles here:
- " vim-scripts repos
  Bundle 'vim-scripts/ScrollColors'
- 
- " original repos on github
  Bundle 'lervag/vim-latex'
  Bundle 'transvim.vim'
 	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
- "NOTE: comments after Bundle command are not allowed..
+ filetype plugin indent on
  " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 " Only do this part when compiled with support for autocommands.
