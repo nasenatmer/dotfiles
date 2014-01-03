@@ -53,7 +53,7 @@ cktimeout=30
 # Additional arguments to pass to X server, which is usually called as:
 #   /usr/bin/X :$display "${serverargs[@]}" vt$((xtty+display))
 # Arguments with whitespaces should be quoted or escaped.
-serverargs=(-nolisten tcp)
+serverargs=(-nolisten tcp vt$XDG_VTNR)
 
 # Alternative method of calling startx(/setsid). Should only be set if cdm
 # does not start X as expected (bash -x shows call to setsid startx, but for
