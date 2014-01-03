@@ -67,8 +67,9 @@ TEXT
 ${color #55aaff}$nodename$color - $sysname $kernel on $machine
 ${color #6495ed}Uptime:$color $uptime ${color lightgrey}- ${color #6495ed}Load:$color $loadavg${color lightgrey}
 $color$stippled_hr${color lightgrey}
-${color #6495ed}CPU: ${color lightgrey}Intel Xeon X3360 @ $color${freq_g} GHz${color lightgrey}
-${color #6495ed}CPU Fan: $color${platform it87.656 fan 1}${color grey} RPM @ $color${execi 8 cat /sys/class/hwmon/hwmon0/device/pwm1}
+${color #6495ed}CPU: ${color lightgrey}Intel Core i3-2310M @ $color${freq_g} GHz${color lightgrey}
+${color #6495ed}CPU Fan: $color${execi 8 grep speed: /proc/acpi/ibm/fan |
+cut -b 9-12}${color grey} RPM 
 ${color black}${cpugraph 35,200 5000a0 6495ed}${color white}  ${cpugauge 35}${color lightgrey}
 ${color #6495ed}Core0:$color${platform coretemp.0 temp 2} °C${color grey} @$color ${cpu cpu1}% ${alignr}${cpubar cpu1 6,120}
 ${color #6495ed}Core1:$color${platform coretemp.0 temp 2} °C${color grey} @$color ${cpu cpu2}% ${alignr}${cpubar cpu2 6,120}
