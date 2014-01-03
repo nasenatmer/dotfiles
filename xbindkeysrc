@@ -45,15 +45,15 @@
     m:0x0 + c:123
     XF86AudioRaiseVolume 
 
-#Master louder
-"amixer -c 0 set Master Playback Volume 2+"
-    m:0x4 + c:123
-    Control + XF86AudioRaiseVolume 
-
 #PCM more quiet
 "amixer -c 0 set PCM Playback Volume 7-"
     m:0x0 + c:122
     XF86AudioLowerVolume 
+
+#Master louder
+"amixer -c 0 set Master Playback Volume 2+"
+    m:0x4 + c:123
+    Control + XF86AudioRaiseVolume 
 
 #Master more quiet
 "amixer -c 0 set Master Playback Volume 2-"
@@ -85,7 +85,7 @@
     m:0x0 + c:171
     XF86AudioNext 
 
-#display setup (arandr)
+#arandr
 "arandr"
     m:0x0 + c:235
     XF86Display 
@@ -105,10 +105,15 @@
     m:0x0 + c:156
     XF86Launch1 
 
-#dmenu_run-Copy
+#dmenu_run-favourites
 "dmenu_run"
     m:0x0 + c:164
     XF86Favorites 
+
+#dmenu_run-alt-f3
+"dmenu_run"
+    m:0x8 + c:69
+    Alt + F3 
 
 #set one display
 "/home/jakob/doc/linux/scripts/setd one"
@@ -119,11 +124,6 @@
 "/home/jakob/doc/linux/scripts/setd two"
     m:0x4 + c:68
     Control + F2 
-
-#xmodmap
-"xmodmap ~/.Xmodmap"
-    m:0x4 + c:95
-    Control + F11 
 
 #thunderbird
 "/usr/local/bin/thunderbird"
