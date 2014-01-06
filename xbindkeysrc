@@ -92,8 +92,8 @@
 
 #xkill
 "xkill"
-    m:0x4 + c:72
-    Control + F6 
+    m:0x4 + c:75
+    Control + F9 
 
 #dwb
 "dwb"
