@@ -19,6 +19,7 @@ syntax on			" Switch Syntax Highlighting on
 let g:xml_syntax_folding = 1	" automatic syntax based folding for xml files
 "let $PAGER=''			" clear $PAGER for vim
 setlocal textwidth=78		" have a default textwidth
+set mouse=a			" enable scrolling with mouse (keyboard god, please don't beat me!)
 
 """" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
 no j h
