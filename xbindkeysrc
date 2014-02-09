@@ -42,23 +42,23 @@
 
 #PCM louder
 "amixer -c 0 set PCM Playback Volume 7+"
-    m:0x0 + c:123
-    XF86AudioRaiseVolume 
-
-#PCM more quiet
-"amixer -c 0 set PCM Playback Volume 7-"
-    m:0x0 + c:122
-    XF86AudioLowerVolume 
-
-#Master louder
-"amixer -c 0 set Master Playback Volume 2+"
     m:0x4 + c:123
     Control + XF86AudioRaiseVolume 
 
-#Master more quiet
-"amixer -c 0 set Master Playback Volume 2-"
+#PCM more quiet
+"amixer -c 0 set PCM Playback Volume 7-"
     m:0x4 + c:122
     Control + XF86AudioLowerVolume 
+
+#Master louder
+"amixer -c 0 set Master Playback Volume 2+"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume 
+
+#Master more quiet
+"amixer -c 0 set Master Playback Volume 2-"
+    m:0x0 + c:122
+    XF86AudioLowerVolume 
 
 #mute microphone
 "amixer -c 0 set Capture toggle"
