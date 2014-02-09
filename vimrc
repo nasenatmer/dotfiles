@@ -7,12 +7,13 @@ set history=50			" keep 50 lines of command line history
 set laststatus=2		" Always show the statusline (required for powerline)
 set noshowmode			" don't show current mode (done by powerline)
 set t_Co=256			" tell vim that terminal supports 256 colors (required for powerline)
+set ttimeoutlen=50		" shorten pause when leaving insert mode
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set ignorecase			" case insensitive
 set smartcase			" if search pattern has uppercase letter, case sensitive, if not c. insensitive
 set hlsearch			" highlight all search results	
-colorscheme evening 
+colorscheme evening
 "also nice: tango2, earendel, elflord, blackbeauty breeze, marklar, sean,  caramel, oceanlight, dante, slate
 set nocursorline		" disable cursorline with schemes like tango2
 syntax on			" Switch Syntax Highlighting on
@@ -41,7 +42,7 @@ map q :q!
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
- " Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ " Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  filetype off                   " required!
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
@@ -51,6 +52,14 @@ inoremap <c-w> <c-g>u<c-w>
  Bundle 'lervag/vim-latex'
  Bundle 'transvim.vim'
 	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
+ Bundle 'altercation/vim-colors-solarized'
+ Bundle 'bling/vim-airline'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#whitespace#enabled = 0
+  let g:airline#extensions#tmuxline#enabled = 1
+  let g:airline#extensions#branch#enabled = 1
+  let g:airline_theme = "wombat"
+ Bundle 'tpope/vim-fugitive'
  filetype plugin indent on
  " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -119,7 +128,7 @@ function! ToggleSpell()
   echo "spell checking language:" g:myLangList[b:myLang]
 endfunction
 
-" Different completions mapped to some FN keys 
+" Different completions mapped to some FN keys
 " <F1> <c-x><c-L> completion: whole line
 	ino <silent> <F1> <c-x><c-l>
 " <F2> <c-x><c-T> completion: keywords using thesaurus
