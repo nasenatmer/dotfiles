@@ -9,14 +9,14 @@ set textwidth=106
   let g:latex_latexmk_quickfix = 1
   let g:latex_latexmk_options = '-xelatex'
 
-" Some aliases to make writing LaTeX documents with biblatex easier 
+" Some aliases to make writing LaTeX documents with biblatex easier
 imap <buffer> << 		\emph{
 imap <buffer> ((		\autocite[
 imap <buffer> {{		\textcite[
 
 " Those below require LaTeX-Box or vim-latex to be installed!
 " imap <buffer> ))		<Plug>LatexCloseCurEnv
-" when marking text in visual mode, pressing F7 wraps it in curly braces and puts cursor in front of it. 
+" when marking text in visual mode, pressing F7 wraps it in curly braces and puts cursor in front of it.
 " shift+F7 puts it in \begin{}\end{} tags.
 vmap <buffer> <F7>		<Plug>LatexWrapSelection
 vmap <buffer> <S-F7>		<Plug>LatexEnvWrapSelection
