@@ -51,16 +51,25 @@ inoremap <c-w> <c-g>u<c-w>
  Bundle 'vim-scripts/ScrollColors'
  Bundle 'lervag/vim-latex'
  Bundle 'transvim.vim'
-	 let g:trv_dictionary="/usr/share/dict/de-en.txt"
+	let g:trv_dictionary="/usr/share/dict/de-en.txt"
  Bundle 'altercation/vim-colors-solarized'
  Bundle 'bling/vim-airline'
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#whitespace#enabled = 0
-  let g:airline#extensions#tmuxline#enabled = 1
-  let g:airline#extensions#branch#enabled = 1
-  let g:airline_theme = "wombat"
- Bundle 'tpope/vim-fugitive'
- filetype plugin indent on
+	let g:airline_powerline_fonts = 1
+	let g:airline#extensions#whitespace#enabled = 0
+	let g:airline#extensions#tmuxline#enabled = 1
+	let g:airline#extensions#branch#enabled = 1
+	let g:airline_theme = "wombat" "also nice: murmur and understated
+ Bundle 'SirVer/ultisnips'
+	" Trigger configuration. Do not use <tab> if you use YouCompleteMe.
+	let g:UltiSnipsListSnippets="<c-L>"
+	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsJumpForwardTrigger="<tab>"
+	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+	" If you want :UltiSnipsEdit to split your window.
+	let g:UltiSnipsEditSplit="vertical"
+ Bundle 'Sirver/vim-snippets'
+
+ " Bundle 'tpope/vim-fugitive'
  " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 " Only do this part when compiled with support for autocommands.
@@ -127,6 +136,19 @@ function! ToggleSpell()
   endif
   echo "spell checking language:" g:myLangList[b:myLang]
 endfunction
+
+" UltiSnips: Use <c-l> to list snippets when not the whole trigger is typed yet
+function! ExpandPossibleShorterSnippet()
+  if len(UltiSnips#SnippetsInCurrentScope()) == 1 "only one candidate...
+    let curr_key = keys(UltiSnips#SnippetsInCurrentScope())[0]
+    normal diw
+    exe "normal a" . curr_key
+    exe "normal a "
+    return 1
+  endif
+  return 0
+endfunction
+inoremap <silent> <C-l> <C-R>=(ExpandPossibleShorterSnippet() == 0? '': UltiSnips#ExpandSnippet())<CR>
 
 " Different completions mapped to some FN keys
 " <F1> <c-x><c-L> completion: whole line

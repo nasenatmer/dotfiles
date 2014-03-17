@@ -10,9 +10,9 @@ set textwidth=106
   let g:latex_latexmk_options = '-xelatex'
 
 " Some aliases to make writing LaTeX documents with biblatex easier
-imap <buffer> << 		\emph{
-imap <buffer> ((		\autocite[
-imap <buffer> {{		\textcite[
+"imap <buffer> << 		\emph{
+"imap <buffer> ((		\autocite[
+"imap <buffer> {{		\textbf{
 
 " Those below require LaTeX-Box or vim-latex to be installed!
 " imap <buffer> ))		<Plug>LatexCloseCurEnv

@@ -1,0 +1,33 @@
+#extends tex
+#clearsnippets begin
+
+snippet au "autocite" !b
+\autocite[${1}]{${2}}${0}
+endsnippet
+
+snippet aus "autocites" !b
+\autocites[${1}]{${2}}${0}
+endsnippet
+
+snippet tc "textcite" !b
+\textcite[${1}]{${2}}${0}
+endsnippet
+
+snippet tcs "textcites" !b
+\textcites[${1}]{${2}}${0}
+endsnippet
+
+# type "b quote" to get \begin{quote}
+snippet "b(egin)?( (\S+))?" "b <environment>" br
+\begin{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else "something"`}}
+    ${2:${VISUAL}}
+\end{$1}$0
+endsnippet
+
+snippet env
+\begin{${1:enumerate}}
+    $0
+\end{$1}
+endsnippet
+
