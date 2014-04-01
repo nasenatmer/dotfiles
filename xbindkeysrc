@@ -35,11 +35,6 @@
 
 
 
-#mute
-"amixer -c 0 set Master toggle"
-    m:0x0 + c:121
-    XF86AudioMute 
-
 #PCM louder
 "amixer -c 0 set PCM Playback Volume 7+"
     m:0x4 + c:123
@@ -49,16 +44,6 @@
 "amixer -c 0 set PCM Playback Volume 7-"
     m:0x4 + c:122
     Control + XF86AudioLowerVolume 
-
-#Master louder
-"amixer -c 0 set Master Playback Volume 2+"
-    m:0x0 + c:123
-    XF86AudioRaiseVolume 
-
-#Master more quiet
-"amixer -c 0 set Master Playback Volume 2-"
-    m:0x0 + c:122
-    XF86AudioLowerVolume 
 
 #mute microphone
 "amixer -c 0 set Capture toggle"
@@ -135,10 +120,10 @@
     m:0x0 + c:160
     XF86ScreenSaver 
 
-#Hibernate
-"sudo systemctl hibernate"
-    m:0x4 + c:96
-    Control + F12 
+#Suspend
+"systemctl suspend"
+    m:0x4 + c:70
+    Control + F4 
 
 #xfce4-terminal
 "xfce4-terminal"
