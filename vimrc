@@ -53,12 +53,13 @@ inoremap <c-w> <c-g>u<c-w>
  Bundle 'transvim.vim'
 	let g:trv_dictionary="/usr/share/dict/de-en.txt"
  Bundle 'altercation/vim-colors-solarized'
+ Bundle 'edkolev/tmuxline.vim'
  Bundle 'bling/vim-airline'
 	let g:airline_powerline_fonts = 1
-	let g:airline#extensions#whitespace#enabled = 0
-	let g:airline#extensions#tmuxline#enabled = 1
 	let g:airline#extensions#branch#enabled = 1
-	let g:airline_theme = "wombat" "also nice: murmur and understated
+	let g:airline#extensions#whitespace#enabled = 0
+	let g:airline#extensions#tmuxline#enabled = 0
+	let g:airline_theme = "understated" "nice ones: wombat, murmur and understated
  Bundle 'SirVer/ultisnips'
 	" Trigger configuration. Do not use <tab> if you use YouCompleteMe.
 	let g:UltiSnipsListSnippets="<c-L>"
