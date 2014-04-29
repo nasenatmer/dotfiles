@@ -1,19 +1,19 @@
 #extends tex
 #clearsnippets begin
 
-snippet au "autocite" !b
+snippet au "autocite"
 \autocite[${1}]{${2}}${0}
 endsnippet
 
-snippet aus "autocites" !b
+snippet aus "autocites"
 \autocites[${1}]{${2}}${0}
 endsnippet
 
-snippet tc "textcite" !b
+snippet tc "textcite"
 \textcite[${1}]{${2}}${0}
 endsnippet
 
-snippet tcs "textcites" !b
+snippet tcs "textcites"
 \textcites[${1}]{${2}}${0}
 endsnippet
 
@@ -32,8 +32,7 @@ snippet env
 endsnippet
 
 snippet dF "didaktische Funktion" !b
-\hline
-& \multicolumn{3}{l|}{\cellcolor[gray]{0.9}didaktische Funktion: $1} \\\\
+& & \multicolumn{2}{l|}{\cellcolor[gray]{0.9}didaktische Funktion: $1} \\\\
 \hline
 $0
 endsnippet
