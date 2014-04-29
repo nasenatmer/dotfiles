@@ -1,4 +1,45 @@
-set nocompatible		" must be first, because it changes other options as a side effect.
+" Start with Vundle 
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'vim-scripts/ScrollColors'
+Plugin 'lervag/vim-latex'
+	let g:latex_enabled = 1
+Plugin 'transvim.vim'
+	let g:trv_dictionary="/usr/share/dict/de-en.txt"
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'bling/vim-airline'
+	let g:airline_powerline_fonts = 1
+	let g:airline#extensions#branch#enabled = 1
+	let g:airline#extensions#whitespace#enabled = 0
+	let g:airline#extensions#tmuxline#enabled = 0
+	let g:airline_theme = "understated" "nice ones: wombat, murmur and understated
+Plugin 'SirVer/ultisnips'
+	" Trigger configuration. Do not use <tab> if you use YouCompleteMe.
+	let g:UltiSnipsListSnippets="<c-L>"
+	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsJumpForwardTrigger="<tab>"
+	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+	" If you want :UltiSnipsEdit to split your window.
+	let g:UltiSnipsEditSplit="vertical"
+Plugin 'Sirver/vim-snippets'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
 set shell=zsh			" shell to start with
 set encoding=utf-8		" set encoding to utf-8
 set backspace=indent,eol,start	" allow backspacing over everything in insert mode
@@ -42,37 +83,6 @@ map q :q!
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
- " Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- filetype off                   " required!
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
- " let Vundle manage Vundle
- Bundle 'gmarik/vundle'
- Bundle 'vim-scripts/ScrollColors'
- Bundle 'lervag/vim-latex'
- Bundle 'transvim.vim'
-	let g:trv_dictionary="/usr/share/dict/de-en.txt"
- Bundle 'altercation/vim-colors-solarized'
- Bundle 'edkolev/tmuxline.vim'
- Bundle 'bling/vim-airline'
-	let g:airline_powerline_fonts = 1
-	let g:airline#extensions#branch#enabled = 1
-	let g:airline#extensions#whitespace#enabled = 0
-	let g:airline#extensions#tmuxline#enabled = 0
-	let g:airline_theme = "understated" "nice ones: wombat, murmur and understated
- Bundle 'SirVer/ultisnips'
-	" Trigger configuration. Do not use <tab> if you use YouCompleteMe.
-	let g:UltiSnipsListSnippets="<c-L>"
-	let g:UltiSnipsExpandTrigger="<tab>"
-	let g:UltiSnipsJumpForwardTrigger="<tab>"
-	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-	" If you want :UltiSnipsEdit to split your window.
-	let g:UltiSnipsEditSplit="vertical"
- Bundle 'Sirver/vim-snippets'
-
- " Bundle 'tpope/vim-fugitive'
- " end of Vundle section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -98,9 +108,7 @@ if has("autocmd")
 augroup END
 
 else
-
   set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
 """"""" Functions
@@ -126,7 +134,7 @@ endfunction
 
 " Spell Check
 let b:myLang=0
-let g:myLangList=["nospell","de_de","en_gb"]
+let g:myLangList=["nospell","de_de","en_gb","de_de,en_gb"]
 function! ToggleSpell()
   let b:myLang=b:myLang+1
   if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
@@ -152,12 +160,11 @@ endfunction
 inoremap <silent> <C-l> <C-R>=(ExpandPossibleShorterSnippet() == 0? '': UltiSnips#ExpandSnippet())<CR>
 
 " Different completions mapped to some FN keys
-" <F1> <c-x><c-L> completion: whole line
-	ino <silent> <F1> <c-x><c-l>
+" <F1> (formerly: <c-x><c-L> whole line), now: toggle spell option
+	nmap <silent> <F1> :call ToggleSpell()<CR>
 " <F2> <c-x><c-T> completion: keywords using thesaurus
 	ino <silent> <F2> <c-x><c-t>
 	set thesaurus+=/home/jakob/.vim/thesaurus/roget13a.txt
-"	set thesaurus+=/home/jakob/.vim/thesaurus/mthesaur.txt
 " <F3> <c-x><c-I> completion: keywords in current and included files
 	ino <silent> <F3> <c-x><c-i>
 " <F4> <c-x><c-O> completion: omni completion
@@ -166,8 +173,6 @@ inoremap <silent> <C-l> <C-R>=(ExpandPossibleShorterSnippet() == 0? '': UltiSnip
 	nnoremap <f5> :call g:ToggleNuMode()<CR>
 " <F6> saves file  in insert mode
 	imap <F6> :w<CR>a
-" <F7> toggle spell de/en/none
-	nmap <silent> <F7> :call ToggleSpell()<CR>
 " <F8> toggle formatoptions=a value
 	no <F8> :call ToggleFO()<CR>
 	ino <F8> :call ToggleFO()<CR>
