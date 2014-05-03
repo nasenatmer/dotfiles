@@ -2,7 +2,7 @@
 	email = nasenatmer@posteo.de
 	name = nasenatmer
 [credential]
-	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+	helper = cache --timeout=3600
 [push]
 	default = simple
 [core]
