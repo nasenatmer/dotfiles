@@ -111,7 +111,7 @@
     Control + F2 
 
 #thunderbird
-"/usr/bin/thunderbird"
+"/usr/local/bin/thunderbird"
     m:0x0 + c:163
     XF86Mail 
 
