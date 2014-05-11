@@ -134,7 +134,7 @@ endfunction
 
 " Spell Check
 let b:myLang=0
-let g:myLangList=["nospell","de_de","en_gb","de_de,en_gb"]
+let g:myLangList=["nospell","de_de,en_gb","de_de","en_gb"]
 function! ToggleSpell()
   let b:myLang=b:myLang+1
   if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
