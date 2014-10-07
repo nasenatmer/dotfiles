@@ -179,5 +179,5 @@ inoremap <silent> <C-l> <C-R>=(ExpandPossibleShorterSnippet() == 0? '': UltiSnip
 " <F10> toggle Paste mode
 	set pastetoggle=<F10>
 " <F12> echo all FN key functions
-	ino <silent> <F12>  :echo '[F1:line F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F7:toggle spell F8:fo-toggle F10:pastetoggle]' <CR>
-	no <silent> <F12>  :echo '[F1:line F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F7:toggle spell F8:fo-toggle F10:pastetoggle]' <CR>
+	ino <silent> <F12>  :echo '[F1:spelltoggle F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F8:fo-toggle F10:pastetoggle]' <CR>
+	no <silent> <F12>  :echo '[F1:spelltoggle F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F8:fo-toggle F10:pastetoggle]' <CR>
