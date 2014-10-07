@@ -299,7 +299,7 @@ song_columns_list_format = (20)[]{a} (50)[white]{t|f:Title} (7f)[magenta]{l}
 ##
 #playlist_display_mode = columns
 #
-browser_display_mode = classic
+browser_display_mode = columns
 #
 #search_engine_display_mode = classic
 #
@@ -331,7 +331,7 @@ browser_display_mode = classic
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
+# user_interface = classic
 #
 data_fetching_delay = yes
 #
@@ -396,20 +396,20 @@ data_fetching_delay = yes
 ## Screens available for use: help, playlist, browser, search_engine,
 ## media_library, playlist_editor, tag_editor, outputs, visualizer, clock.
 ##
-#screen_switcher_mode = playlist, browser
+screen_switcher_mode = playlist, browser, search_engine, clock
 #
 ##
 ## Note: You can define startup screen for ncmpcpp
 ## by choosing screen from the list above.
 ##
-#startup_screen = playlist
+startup_screen = clock
 #
 ##
 ## Default width of locked screen (in %).
 ## Acceptable values are from 20 to 80.
 ##
 #
-#locked_screen_width_part = 50
+# locked_screen_width_part = 20
 #
 #ask_for_locked_screen_width_part = yes
 #
@@ -438,7 +438,7 @@ ask_before_clearing_playlists = no
 #
 #block_search_constraints_change_if_items_found = yes
 #
-#mouse_support = yes
+mouse_support = yes
 #
 #mouse_list_scroll_whole_page = yes
 #
