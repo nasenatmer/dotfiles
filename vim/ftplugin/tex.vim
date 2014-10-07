@@ -6,8 +6,8 @@ set textwidth=106
 
 " Settings for vim-latex
   let g:latex_complete_close_braces = 1
-  let g:latex_latexmk_quickfix = 0
-  let g:latex_latexmk_options = '-xelatex'
+  let g:latex_quickfix_mode = 0
+  let g:latex_quickfix_open_on_warning = 0
 
 " Some aliases to make writing LaTeX documents with biblatex easier
 "imap <buffer> << 		\emph{
@@ -34,3 +34,4 @@ set iskeyword+=:
 set number
 set numberwidth=2
 set cpoptions+=n 		" use the nr column for wrapped lines
+autocmd VimEnter ~/ba/*,~/doc* call ToggleSpell()
