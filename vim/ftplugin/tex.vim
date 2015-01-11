@@ -7,12 +7,15 @@ set textwidth=106
 " Settings for vim-latex
   let g:latex_complete_close_braces = 1
   let g:latex_quickfix_mode = 0
-  let g:latex_quickfix_open_on_warning = 0
-
-" Some aliases to make writing LaTeX documents with biblatex easier
-"imap <buffer> << 		\emph{
-"imap <buffer> ((		\autocite[
-"imap <buffer> {{		\textbf{
+"  let g:latex_quickfix_open_on_warning = 0
+  let g:latex_fold_preamble = 1
+  let g:latex_quickfix_ignored_warnings = [
+        \ 'Underfull',
+        \ 'Overfull',
+        \ 'specifier changed to',
+        \ 'Using preliminary',
+	\ 'xparse/redefine-command',
+      \ ]
 
 " Those below require LaTeX-Box or vim-latex to be installed!
 " imap <buffer> ))		<Plug>LatexCloseCurEnv
