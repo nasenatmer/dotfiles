@@ -110,6 +110,11 @@
     m:0x4 + c:68
     Control + F2 
 
+#set ext display only
+"/home/jakob/doc/linux/scripts/setd ext"
+    m:0x4 + c:69
+    Control + F3 
+
 #thunderbird
 "/usr/local/bin/thunderbird"
     m:0x0 + c:163
@@ -130,5 +135,9 @@
     m:0x4 + c:164
     Control + XF86Favorites 
 
+"xbacklight -dec 7"
+  XF86MonBrightnessDown
+"xbacklight -inc 7"
+  XF86MonBrightnessUp
 #
 # End of xbindkeys configuration
