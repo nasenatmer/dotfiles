@@ -28,7 +28,7 @@
 #
 #mpd_port = 6600
 #
-#mpd_connection_timeout = 5
+mpd_connection_timeout = 5
 #
 ## Needed for tag editor and file operations to work.
 ##
@@ -275,7 +275,7 @@ mpd_music_dir = ~/mucke
 ##
 #
 #song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-song_columns_list_format = (20)[]{a} (50)[white]{t|f:Title} (7f)[magenta]{l}
+#song_columns_list_format = (20)[]{a} (50)[white]{t|f:Title} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -517,36 +517,34 @@ allow_for_physical_item_deletion = yes
 #
 #active_window_border = red
 #
-## taken from: https://bbs.archlinux.org/viewtopic.php?pid=827217#p827217
-#colors_enabled = "yes"
-#empty_tag_color = "cyan"
-#header_window_color = "default"
-#volume_color = "default"
-#state_line_color = "default"
-#state_flags_color = "default"
-#main_window_color = "default"
-#color1 = "white"
-#color2 = "cyan"
-#main_window_highlight_color = "red"
-#progressbar_color = "default"
-#statusbar_color = "default"
-#alternative_ui_separator_color = "black"
-#active_column_color = "yellow"
-#visualizer_color = "red"
-#window_border_color = "red"
-#active_window_border = "yellow"
 
-# another one, from https://bbs.archlinux.org/viewtopic.php?pid=832572#p832572
-#active_column_color = "red"
-#active_window_border = "white"
-#alternative_ui_separator_color = "grey"
-#empty_tag_marker = "<null>"
-#empty_tag_color = "white"
-#header_window_color = "grey"
-#main_window_color = "grey"
-#main_window_highlight_color = "grey"
-#progressbar_color = "blue"
-#state_line_color = "blue"
-#state_flags_color = "magenta"
-#statusbar_color = "white"
-#volume_color = "white"
+# config from http://dotshare.it/dots/908/
+colors_enabled                        = "yes"
+song_status_format                    = "$0{$8%t$9} on {$5%b$9} by {$3%a}" 
+song_columns_list_format              = "(20)[green]{a} (50)[]{t|f} (20)[blue]{b} (10)[green]{l}"
+now_playing_prefix                    = "$b$8> $/b$9"
+now_playing_suffix                    = ""
+progressbar_look                      = "─  "
+progressbar_boldness                  = "no"
+
+user_interface                        = "classic"
+playlist_display_mode                 = "columns"
+#media_library_disable_two_column_mode = "yes"
+header_visibility                     = "no"
+statusbar_visibility                  = "yes"
+titles_visibility                     = "no"
+playlist_disable_highlight_delay      = "1"
+message_delay_time                    = "1"
+autocenter_mode                       = "yes"
+centered_cursor                       = "yes"
+#mouse_support                         = "yes"
+discard_colors_if_item_is_selected    = "yes"
+#fancy_scrolling                       = "yes"
+ignore_leading_the                    = "yes"
+
+main_window_color           = "default"
+main_window_highlight_color = "default"
+progressbar_color           = "red"
+active_column_color         = "yellow"
+enable_window_title         = "yes"
+
