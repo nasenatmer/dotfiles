@@ -8,7 +8,7 @@ set textwidth=106
   let g:latex_complete_close_braces = 1
   let g:latex_quickfix_mode = 0
   let g:latex_fold_preamble = 1
-  let g:latex_view_method = 'mupdf'
+  let g:latex_view_method = 'zathura'
   let g:latex_quickfix_ignored_warnings = [
         \ 'Underfull',
         \ 'Overfull',
