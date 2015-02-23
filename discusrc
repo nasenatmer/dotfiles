@@ -26,7 +26,7 @@ opts["mtab"] = "/etc/mtab"
 opts["places"] = 1
 
 ##  Filesystems to ignore.
-opts["skip_list"] = ["/dev/pts", "/proc", "/sys/fs/cgroup/systemd", "/sys/fs/cgroup/cpuset", "/sys/fs/cgroup/devices", "/sys/fs/cgroup/freezer", "/sys/fs/cgroup/net_cls", "/sys/fs/cgroup/blkio", "/sys/fs/cgroup/bfqio", "/proc/sys/fs/binfmt_misc", "/sys/kernel/debug", "/dev/mqueue", "/dev/hugepages", "/sys/kernel/security", "/dev/shm", "/dev/pts", "/sys/fs/cgroup", "/sys", "/dev", "/run", "/sys/fs/fuse/connections"]
+opts["skip_list"] = ["/dev/pts", "/proc", "/sys/fs/cgroup/systemd", "/sys/fs/cgroup/cpuset", "/sys/fs/cgroup/cpu,cpuacct", "/sys/fs/cgroup/memory", "/sys/fs/cgroup/devices", "/sys/fs/cgroup/freezer", "/sys/fs/cgroup/net_cls", "/sys/fs/cgroup/blkio", "/sys/fs/cgroup/bfqio", "/proc/sys/fs/binfmt_misc", "/sys/kernel/debug", "/sys/kernel/config", "/dev/mqueue", "/dev/hugepages", "/sys/kernel/security", "/dev/shm", "/dev/pts", "/sys/fs/cgroup", "/sys", "/dev", "/run", "/sys/fs/fuse/connections", "/sys/fs/pstore", "/sys/firmware/efi/efivars"]
 
 ##  Use smart formatting of numbers.
 opts["smart"] = 1
