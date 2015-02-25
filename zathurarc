@@ -1,12 +1,35 @@
 #zathurarc
-#settings
+# general settings
 set window-height 1200
 set window-width 1024
 set adjust-open width
 set scroll-step 90
 set scroll-full-overlap 0.04
+set window-title-basename true
+set font "Inconsolata-g Medium 9"
 
-#key bindings
+# Colors from https://github.com/lervag/dotfiles/blob/master/config/zathura/zathurarc
+set inputbar-bg "#fdf6e3"
+set inputbar-fg "#657b83"
+set statusbar-bg "#fdf6e3"
+set statusbar-fg "#657b83"
+set completion-bg "#fdf6e3"
+set completion-fg "#657b83"
+set index-bg "#fdf6e3"
+set index-fg "#657b83"
+set index-active-fg "#657b83"
+#set highlight-active-color "#657b83"
+#set highlight-color "#fdf6e3"
+set completion-highlight-fg "#fdf6e3"
+set completion-highlight-bg "#657b83"
+set notification-bg "#fdf6e3"
+set notification-fg "#657b83"
+set notification-error-bg "#fdf6e3"
+set notification-error-fg "#657b83"
+set notification-warning-bg "#fdf6e3"
+set notification-warning-fg "#657b83"
+
+# bone2 key bindings
 map q quit 
 map f navigate next
 map b navigate previous
