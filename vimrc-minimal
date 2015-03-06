@@ -6,7 +6,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'lervag/vim-latex'
-  let g:latex_view_method = 'zathura' |
+  let g:latex_view_method = 'mupdf' |
 
 call vundle#end()
 filetype plugin indent on
