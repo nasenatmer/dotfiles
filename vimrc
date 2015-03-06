@@ -1,4 +1,4 @@
-" Start with Vundle 
+" Section: Vundle {{{1
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -11,6 +11,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-sensible'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'lervag/vim-latex'
 	let g:latex_enabled = 1
@@ -35,39 +36,31 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Sirver/vim-snippets'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+call vundle#end()            " required 1}}}
 
+" Section: Options {{{1
+runtime! plugins/sensible.vim   " set sensible options now
 set shell=zsh			" shell to start with
-set encoding=utf-8		" set encoding to utf-8
-set backspace=indent,eol,start	" allow backspacing over everything in insert mode
 set nobackup			" don't make backup files
-set history=50			" keep 50 lines of command line history
-set laststatus=2		" Always show the statusline (required for powerline)
-set noshowmode			" don't show current mode (done by powerline)
-set t_Co=256			" tell vim that terminal supports 256 colors (required for powerline)
-set ttimeoutlen=50		" shorten pause when leaving insert mode
-set ruler			" show the cursor position all the time
-set showcmd			" display incomplete commands
-set ignorecase			" case insensitive
-set smartcase			" if search pattern has uppercase letter, case sensitive, if not c. insensitive
-set hlsearch			" highlight all search results	
+set noshowmode			" don't show current mode (done by airline)
+set t_Co=256			" tell vim that terminal supports 256 colors 
+set ignorecase			" case insensitive search
+set smartcase			" only c. sensitive if uppercase letter in exp 
+set hlsearch			" highlight all search results
+set mouse=a			" enable scrolling with mouse (keyboard god, 
+set foldmethod=marker		" enable folding in vim by using markers
+set shiftwidth=2
+set textwidth=78
 colorscheme evening
-"also nice: tango2, earendel, elflord, blackbeauty breeze, marklar, sean,  caramel, oceanlight, dante, slate
-set nocursorline		" disable cursorline with schemes like tango2
-syntax on			" Switch Syntax Highlighting on
-let g:xml_syntax_folding = 1	" automatic syntax based folding for xml files
-"let $PAGER=''			" clear $PAGER for vim
-setlocal textwidth=78		" have a default textwidth
-set mouse=a			" enable scrolling with mouse (keyboard god, please don't beat me!)
+"tango2, elflord, blackbeauty, breeze, marklar, sean, oceanlight, dante, slate
+" 1}}}
 
-"""" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
-no j h
-no h j
-no l k
-no k l
+" Section: Mappings {{{1
+" keyboard mappings adapted to bone keyboard layout: wiki.neo-layout.org/bone
+noremap j h
+noremap h j
+noremap l k
+noremap k l
 
 """" other mappings to make life easier
 " use tabedit
@@ -75,53 +68,82 @@ nmap t :tabedit
 " alias üü to <Esc> key. Handy for people with German keyboard layouts.
 inoremap üü <Esc>
 vnoremap üü <Esc>
-" alias "mm" to :write and "q" to :quit without saving
-map mm :w!
-map q :q!
+" alias "mm" to ":write" and "q" to ":quit" without saving
+map mm :w!<CR>
+map q :q!<CR>
 " start a new change before doing <c-u> (and be able to undo it with u)
 " (wikia/recover from accidental Ctrl-U)
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
-" Only do this part when compiled with support for autocommands.
+" Completion and Functions Mappings to FN keys 
+" <F1> toggle spell option
+   nmap <silent> <F1> :call ToggleSpell()<CR>
+" <F2> <c-x><c-T> completion: keywords using thesaurus
+   ino <silent> <F2> <c-x><c-t>
+   set thesaurus+=/home/jakob/.vim/thesaurus/roget13a.txt
+" <F3> <c-x><c-I> completion: keywords in current and included files
+   ino <silent> <F3> <c-x><c-i>
+" <F4> <c-x><c-O> completion: omni completion
+   ino <silent> <F4> <c-x><c-o>
+" <F5> empty
+" <F6> saves file  in insert mode
+   imap <F6> <Esc>:w<CR>a
+" <F7> empty
+" <F8> toggle formatoptions=a value
+   no <F8> :call ToggleFO()<CR>
+   ino <F8> <Esc>:call ToggleFO()<CR>
+" <F9> empty
+" <F10> toggle Paste mode
+   set pastetoggle=<F10>
+" <F11> empty
+" <F12> echo all FN key functions
+   ino <silent> <F12> <Esc> <Esc>:echo '[F1:spelltoggle F2:thes F3:keywrd F4:omni - F6:":w" F8:fo-toggle F10:pastetoggle]' <CR>
+   no <silent> <F12> <Esc> <Esc>:echo '[F1:spelltoggle F2:thes F3:keywrd F4:omni - F6:":w" F8:fo-toggle F10:pastetoggle]' <CR>
+
+" 1}}}
+
+" Section: Autocommands (incl. FTOptions){{{1
 if has("autocmd")
+  augroup FTOptions
+    autocmd!
+    autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
+    autocmd FileType markdown,text,txt setlocal textwidth=78 nolist
+	  \ formatoptions=tcqwan colorcolumn=+2
+	  \ number numberwidth=2 cpoptions+=n iskeyword+=:
+    autocmd FileType xml let g:xml_syntax_folding=1	
+    autocmd FileType tex let g:tex_flavor='latex' |
+	  \ let g:latex_complete_close_braces = 1 |
+	  \ let g:latex_quickfix_mode = 0 |
+	  \ let g:latex_fold_preamble = 1 |
+	  \ let g:latex_view_method = 'zathura' |
+	  \ let g:latex_quickfix_ignored_warnings = [
+		  \ 'Underfull',
+		  \ 'Overfull',
+		  \ 'specifier changed to',
+		  \ 'Using preliminary',
+		  \ 'xparse/redefine-command',
+		  \ ] |
+	  \ setlocal formatoptions+=tcqwan textwidth=106
+	  \ number numberwidth=2 cpoptions+=n iskeyword+=:
+  augroup END
+augroup vimrcEx
+    autocmd!
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+	  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+	  \   exe "normal g`\"" |
+	  \ endif
+    autocmd BufEnter * checktime
+    autocmd VimEnter ~/doc* setlocal textwidth=106 spell spelllang=en_gb,de_de colorcolumn=
+  augroup END
+endif " has("autocmd") "}}}1
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+" Section: Functions {{{1
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  au BufEnter * checktime
-augroup END
-
-else
-  set autoindent		" always set autoindenting on
-endif " has("autocmd")
-
-""""""" Functions
-" Toggle NuMode
-function! g:ToggleNuMode()
-	if(&rnu == 1)
-		set nu
-	else
-		set rnu
-	endif
-endfunc
-
-" formatoptions toggle
+" Formatopions Toggle tcgwn - tcgwan {{{2
 function! ToggleFO ()
    if (&formatoptions == 'tcqwan')
       set formatoptions=tcqwn
@@ -130,54 +152,34 @@ function! ToggleFO ()
       set formatoptions=tcqwan
       echo "formatoptions -> tcqwan"
    endif
-endfunction
+endfunction " 2}}}
 
-" Spell Check
+" Spell Check Toggle {{{2
 let b:myLang=0
 let g:myLangList=["nospell","en_gb,de_de","de_de","en_gb"]
 function! ToggleSpell()
-  let b:myLang=b:myLang+1
-  if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
-  if b:myLang==0
-    setlocal nospell
-  else
-    execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
-  endif
-  echo "spell checking language:" g:myLangList[b:myLang]
-endfunction
+   let b:myLang=b:myLang+1
+   if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
+   if b:myLang==0
+      setlocal nospell
+   else
+      execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
+   endif
+   echo "spell checking language:" g:myLangList[b:myLang]
+endfunction " 2}}}
 
-" UltiSnips: Use <c-l> to list snippets when not the whole trigger is typed yet
+" UltiSnips: Use <c-l> to list snippets when not the whole trigger is typed yet {{{2
 function! ExpandPossibleShorterSnippet()
-  if len(UltiSnips#SnippetsInCurrentScope()) == 1 "only one candidate...
-    let curr_key = keys(UltiSnips#SnippetsInCurrentScope())[0]
-    normal diw
-    exe "normal a" . curr_key
-    exe "normal a "
-    return 1
-  endif
-  return 0
+   if len(UltiSnips#SnippetsInCurrentScope()) == 1 "only one candidate...
+      let curr_key = keys(UltiSnips#SnippetsInCurrentScope())[0]
+      normal diw
+      exe "normal a" . curr_key
+      exe "normal a "
+      return 1
+   endif
+   return 0
 endfunction
 inoremap <silent> <C-l> <C-R>=(ExpandPossibleShorterSnippet() == 0? '': UltiSnips#ExpandSnippet())<CR>
+" 2}}} 
 
-" Different completions mapped to some FN keys
-" <F1> (formerly: <c-x><c-L> whole line), now: toggle spell option
-	nmap <silent> <F1> :call ToggleSpell()<CR>
-" <F2> <c-x><c-T> completion: keywords using thesaurus
-	ino <silent> <F2> <c-x><c-t>
-	set thesaurus+=/home/jakob/.vim/thesaurus/roget13a.txt
-" <F3> <c-x><c-I> completion: keywords in current and included files
-	ino <silent> <F3> <c-x><c-i>
-" <F4> <c-x><c-O> completion: omni completion
-	ino <silent> <F4> <c-x><c-o>
-" <F5> toggle relative/absolute linenumbers
-	nnoremap <f5> :call g:ToggleNuMode()<CR>
-" <F6> saves file  in insert mode
-	imap <F6> :w<CR>a
-" <F8> toggle formatoptions=a value
-	no <F8> :call ToggleFO()<CR>
-	ino <F8> :call ToggleFO()<CR>
-" <F10> toggle Paste mode
-	set pastetoggle=<F10>
-" <F12> echo all FN key functions
-	ino <silent> <F12>  :echo '[F1:spelltoggle F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F8:fo-toggle F10:pastetoggle]' <CR>
-	no <silent> <F12>  :echo '[F1:spelltoggle F2:thes F3:keywrd F4:omni - F5:toggle-no/rnu F6:":w" F8:fo-toggle F10:pastetoggle]' <CR>
+" 1}}}
