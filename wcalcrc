@@ -1,2 +1,4 @@
-#thousands_delimiter='
-#decimal_delimiter=,
+thousands_delimiter="'"
+decimal_delimiter=,
+save_errors = yes
+color = yes
