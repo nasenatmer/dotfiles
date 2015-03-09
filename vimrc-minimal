@@ -5,8 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'lervag/vim-latex'
-  let g:latex_view_method = 'mupdf' |
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on
