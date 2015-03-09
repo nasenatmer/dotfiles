@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'lervag/vim-latex'
+Plugin 'lervag/vimtex'
   let g:latex_view_method = 'zathura' |
 
 call vundle#end()
