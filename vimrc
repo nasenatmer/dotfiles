@@ -14,7 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'lervag/vimtex'
-	let g:latex_enabled = 1
+	let g:vimtex_enabled = 1
 Plugin 'transvim.vim'
 	let g:trv_dictionary="/usr/share/dict/de-en.txt"
 Plugin 'altercation/vim-colors-solarized'
@@ -113,11 +113,10 @@ if has("autocmd")
 	  \ number numberwidth=2 cpoptions+=n iskeyword+=:
     autocmd FileType xml let g:xml_syntax_folding=1	
     autocmd FileType tex let g:tex_flavor='latex' |
-	  \ let g:latex_complete_close_braces = 1 |
-	  \ let g:latex_quickfix_mode = 0 |
-	  \ let g:latex_fold_preamble = 1 |
-	  \ let g:latex_view_method = 'zathura' |
-	  \ let g:latex_quickfix_ignored_warnings = [
+	  \ let g:vimtex_complete_close_braces = 1 |
+	  \ let g:vimtex_quickfix_mode = 0 |
+	  \ let g:vimtex_view_method = 'zathura' |
+	  \ let g:vimtex_quickfix_ignored_warnings = [
 		  \ 'Underfull',
 		  \ 'Overfull',
 		  \ 'specifier changed to',
