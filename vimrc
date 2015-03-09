@@ -13,7 +13,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'vim-scripts/ScrollColors'
-Plugin 'lervag/vim-latex'
+Plugin 'lervag/vimtex'
 	let g:latex_enabled = 1
 Plugin 'transvim.vim'
 	let g:trv_dictionary="/usr/share/dict/de-en.txt"
