@@ -80,8 +80,8 @@
     m:0x4 + c:75
     Control + F9 
 
-#dwb
-"dwb"
+#chromium
+"chromium"
     m:0x0 + c:180
     XF86HomePage 
 
@@ -116,7 +116,7 @@
     Control + F3 
 
 #thunderbird
-"/usr/local/bin/thunderbird"
+"/usr/bin/thunderbird"
     m:0x0 + c:163
     XF86Mail 
 
@@ -135,9 +135,15 @@
     m:0x4 + c:164
     Control + XF86Favorites 
 
+#BrightnessDown
 "xbacklight -dec 7"
-  XF86MonBrightnessDown
+    m:0x0 + c:232
+    XF86MonBrightnessDown 
+
+#-BrightnessUp
 "xbacklight -inc 7"
-  XF86MonBrightnessUp
+    m:0x0 + c:233
+    XF86MonBrightnessUp 
+
 #
 # End of xbindkeys configuration
