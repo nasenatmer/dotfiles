@@ -12,11 +12,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
-Plugin 'vim-scripts/ScrollColors'
 Plugin 'lervag/vimtex'
 Plugin 'transvim.vim'
 	let g:trv_dictionary="/usr/share/dict/de-en.txt"
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'bling/vim-airline'
 	let g:airline_powerline_fonts = 1
@@ -32,7 +30,8 @@ Plugin 'SirVer/ultisnips'
 	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 	" If you want :UltiSnipsEdit to split your window.
 	let g:UltiSnipsEditSplit="vertical"
-Plugin 'Sirver/vim-snippets'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required 1}}}
@@ -109,13 +108,17 @@ if has("autocmd")
     autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
     autocmd FileType markdown,text,txt setlocal textwidth=78 nolist
 	  \ formatoptions=tcqwan colorcolumn=+2
-	  \ number numberwidth=2 cpoptions+=n iskeyword+=:
+	  \ number numberwidth=2 cpoptions+=n iskeyword+=: 
+    "	  \ let g:pandoc#formatting#mode = 'hA'
+	  "Convert markdown table to rst table
+	  command! -range=% Rst :'<,'>!pandoc -f markdown -t rst
     autocmd FileType xml let g:xml_syntax_folding=1	
     autocmd FileType tex let g:tex_flavor='latex' |
 	  \ let g:vimtex_enabled = 1 |
 	  \ let g:vimtex_complete_close_braces = 1 |
 	  \ let g:vimtex_quickfix_mode = 0 |
 	  \ let g:vimtex_view_method = 'zathura' |
+	  \ let g:vimtex_snippets_math = 0 |
 	  \ let g:vimtex_quickfix_ignored_warnings = [
 		  \ 'Underfull',
 		  \ 'Overfull',
@@ -125,6 +128,7 @@ if has("autocmd")
 		  \ ] |
 	  \ setlocal formatoptions+=tcqwan textwidth=106
 	  \ number numberwidth=2 cpoptions+=n iskeyword+=:
+	  \ fillchars=fold:\ |
   augroup END
 augroup vimrcEx
     autocmd!
