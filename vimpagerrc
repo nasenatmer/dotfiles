@@ -1,6 +1,5 @@
 syntax on			" Switch Syntax Highlighting on
 source ~/.vim/plugin/AnsiEscPlugin.vim
-colorscheme tango2
 set laststatus=2		" Always show the statusline (required for powerline)
 filetype plugin indent on
 set mouse=a			" enable scrolling with mouse (keyboard god, please don't beat me!)
