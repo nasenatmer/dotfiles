@@ -31,8 +31,10 @@ Plugin 'SirVer/ultisnips'
 	" If you want :UltiSnipsEdit to split your window.
 	let g:UltiSnipsEditSplit="vertical"
 Plugin 'honza/vim-snippets'
+Plugin 'Konfekt/FastFold'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vim-scripts/ScrollColors'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required 1}}}
 
@@ -49,8 +51,9 @@ set mouse=a			" enable scrolling with mouse (keyboard god,
 set foldmethod=marker		" enable folding in vim by using markers
 set shiftwidth=2
 set textwidth=78
-colorscheme evening
-"tango2, elflord, blackbeauty, breeze, marklar, sean, oceanlight, dante, slate
+set conceallevel=2
+colorscheme darkburn
+" zenburn, freya, relaxedgreen, peachpuff paradox industry fnaqevan anotherdark, caramel, evening tango2, elflord, blackbeauty, marklar, sean, 
 " 1}}}
 
 " Section: Mappings {{{1
@@ -119,6 +122,8 @@ if has("autocmd")
 	  \ let g:vimtex_quickfix_mode = 0 |
 	  \ let g:vimtex_view_method = 'zathura' |
 	  \ let g:vimtex_snippets_math = 0 |
+	  \ let g:vimtex_fold_enabled = 1 |
+	  \ let g:vimtex_fold_comments = 1 |
 	  \ let g:vimtex_quickfix_ignored_warnings = [
 		  \ 'Underfull',
 		  \ 'Overfull',
