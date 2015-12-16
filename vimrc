@@ -51,7 +51,7 @@ set mouse=a			" enable scrolling with mouse (keyboard god,
 set foldmethod=marker		" enable folding in vim by using markers
 set shiftwidth=2
 set textwidth=78
-set conceallevel=2
+set listchars=nbsp:¬
 colorscheme darkburn
 " zenburn, freya, relaxedgreen, peachpuff paradox industry fnaqevan anotherdark, caramel, evening tango2, elflord, blackbeauty, marklar, sean, 
 " 1}}}
@@ -121,7 +121,7 @@ if has("autocmd")
 	  \ let g:vimtex_complete_close_braces = 1 |
 	  \ let g:vimtex_quickfix_mode = 0 |
 	  \ let g:vimtex_view_method = 'zathura' |
-	  \ let g:vimtex_snippets_math = 0 |
+	  \ let g:vimtex_imaps_enabled = 0 |
 	  \ let g:vimtex_fold_enabled = 1 |
 	  \ let g:vimtex_fold_comments = 1 |
 	  \ let g:vimtex_quickfix_ignored_warnings = [
