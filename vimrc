@@ -16,12 +16,13 @@ Plugin 'lervag/vimtex'
 Plugin 'transvim.vim'
 	let g:trv_dictionary="/usr/share/dict/de-en.txt"
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#branch#enabled = 1
 	let g:airline#extensions#whitespace#enabled = 0
 	let g:airline#extensions#tmuxline#enabled = 0
-	let g:airline_theme = "understated" "nice ones: wombat, murmur and understated
+	let g:airline_theme = "distinguished" "nice ones: badwolf, bubblegum and understated
 Plugin 'SirVer/ultisnips'
 	" Trigger configuration. Do not use <tab> if you use YouCompleteMe.
 	let g:UltiSnipsListSnippets="<c-L>"
