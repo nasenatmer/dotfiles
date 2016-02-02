@@ -100,20 +100,15 @@
     m:0x8 + c:69
     Alt + F3 
 
-#set one display
-"/home/jakob/doc/linux/scripts/setd one"
-    m:0x4 + c:67
-    Control + F1 
-
-#set two displays
-"/home/jakob/doc/linux/scripts/setd two"
-    m:0x4 + c:68
-    Control + F2 
+#set int display
+"/home/jakob/doc/linux/scripts/setd int"
+    m:0x4 + c:95
+    Control + F11 
 
 #set ext display only
 "/home/jakob/doc/linux/scripts/setd ext"
-    m:0x4 + c:69
-    Control + F3 
+    m:0x4 + c:96
+    Control + F12 
 
 #thunderbird
 "/usr/bin/thunderbird"
