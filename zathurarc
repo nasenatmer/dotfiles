@@ -29,7 +29,7 @@ set notification-error-fg "#657b83"
 set notification-warning-bg "#fdf6e3"
 set notification-warning-fg "#657b83"
 
-# bone2 key bindings
+# Bone key bindings
 map q quit 
 map f navigate next
 map b navigate previous

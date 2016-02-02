@@ -4,7 +4,7 @@ set laststatus=2		" Always show the statusline (required for powerline)
 filetype plugin indent on
 set mouse=a			" enable scrolling with mouse (keyboard god, please don't beat me!)
 
-"""" keyboard mappings adapted to bone2 keyboard layout: https://wiki.neo-layout.org/bone2
+"""" keyboard mappings adapted to bone keyboard layout: https://wiki.neo-layout.org/Bone
 no j h
 no h j
 no l k

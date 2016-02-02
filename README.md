@@ -1,10 +1,10 @@
-Dotfiles with bone2 adaptions
+Dotfiles with bone adaptions
 =============================
 
 A collection of my dotfiles used on a Archlinux `x86_64` box.
 
 A special focus is set on tools that use `vi`-like `hjkl` navigation. I use 
-some of them (`vim`, `ncmpcpp`, `zathura`) and adapted these to the [bone2 
+some of them (`vim`, `ncmpcpp`, `zathura`) and adapted these to the [bone 
 keyboard layout][1]. Additionally, some other programmes (`tmux`, `mplayer`, 
 `muttator` or `vimperator`) offer vi-like modes where I sought to adapt these, 
 too. Feel free to take and use whatever you like!
@@ -29,7 +29,7 @@ This is mainly for me to simplify setting up a familiar working environment:
 
   1. Clone the repository:
 
-		git clone --recursive https://github.com/nasenatmer/dotfiles-bone2.git "$HOME/.dotfiles"
+		git clone --recursive https://github.com/nasenatmer/dotfiles-bone.git "$HOME/.dotfiles"
 
   2. Link dotfiles to `$HOME`:
 
@@ -50,7 +50,7 @@ Pull the latest changes and update submodules.
 
 	git pull && git submodule update --init --recursive
 
-[1]: http://wiki.neo-layout.org/wiki/Bone2
+[1]: http://wiki.neo-layout.org/wiki/Bone
 [2]: https://github.com/nasenatmer/prezto
 
 < vim: set tw=78: >
