@@ -33,6 +33,7 @@ Plugin 'SirVer/ultisnips'
 	let g:UltiSnipsEditSplit="vertical"
 Plugin 'honza/vim-snippets'
 Plugin 'Konfekt/FastFold'
+Plugin 'godlygeek/tabular'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-scripts/ScrollColors'
@@ -131,6 +132,7 @@ if has("autocmd")
 		  \ 'specifier changed to',
 		  \ 'Using preliminary',
 		  \ 'xparse/redefine-command',
+		  \ 'Draft mode on',
 		  \ ] |
 	  \ setlocal formatoptions+=tcqwan textwidth=106
 	  \ number numberwidth=2 cpoptions+=n iskeyword+=:
